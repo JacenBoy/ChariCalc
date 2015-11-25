@@ -6,4 +6,4 @@ This project is built with Python. To keep things neat, the code will be stored 
 The project's features currently include:
    - Type Calculator: Calculate the effectiveness of a move.
    - Dice Roller: Roll random numbers.
-   - Dex Search (Incomplete): Find a POokedex number for a given name.
+   - Dex Search (Incomplete): Find a Pokedex number for a given name. Currently, only the original 151 are implemented.
