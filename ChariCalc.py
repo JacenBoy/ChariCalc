@@ -44,13 +44,13 @@ while user.lower() != "e":
 	print("(M)ega Evolution Search")
 	print("(E)xit")
 	print("")
-	user = raw_input(">>> ")
+	user = input(">>> ")
 
 	# If the user chooses to check a type advantage, ask for the types being
 	#   compared and return the effectiveness.
 	if (user.lower() == 't'):
-		dexNum = Pokedex.dexSearch(raw_input("Please input a Pokemon name. "))
-		moveName = raw_input("Please input a move name. ")
+		dexNum = Pokedex.dexSearch(input("Please input a Pokemon name. "))
+		moveName = input("Please input a move name. ")
 		atk = TypeChart.atkType(PokeTypes.moveTypes[moveName.title()])
 		dfdf = TypeChart.defType(PokeTypes.pokeTypes[dexNum][0])
 		dfds = TypeChart.defType(PokeTypes.pokeTypes[dexNum][1])
@@ -81,29 +81,31 @@ while user.lower() != "e":
 				print("No effect...")
 			else:
 				print("I don't know how effective that was...")
-				
+
 	# If the user wants to do a dice roll, ask for the number of dice to
 	#   roll and the number of sides, then return the results.
 	elif user.lower() == 'r':
-		dice = int(raw_input("How many dice to roll? "))
-		sides = int(raw_input("How many sides per die? "))
+		dice = input("How many dice to roll? ")
+		sides = input("How many sides per die? ")
+		dice = int(dice)
+		sides = int(sides)
 		print("")
 		for i in range(1,dice+1):
 			roll = randint(1,sides)
 			print(roll)
 			print("")
 		print("End of roll.")
-		
+
 	# If the user wants to search for a Pokedex number, ask them for the
 	#   Pokemon's name and return the dex number.
 	elif user.lower() == 'd':
-		dex = raw_input("Enter the Pokemon's name. ")
+		dex = input("Enter the Pokemon's name. ")
 		print(Pokedex.dexSearch(dex))
-	
+
 	#If the user wants to search for a Mega Evolution, ask for the Pokemon's
 	#   name, and find out the information.
 	elif user.lower() == 'm':
-		dex = raw_input("Enter a Pokemon's name. ")
+		dex = input("Enter a Pokemon's name. ")
 		dexNum = Pokedex.dexSearch(dex)
 		if dexNum == "Entry not found.":
 			print(dex + " is not a valid Pokemon name.")
@@ -115,7 +117,7 @@ while user.lower() != "e":
 	#   confirm. Otherwise, tell them that the command is wrong.
 	else:
 		if user.lower() == 'e':
-			user = raw_input("Type 'e' again to confirm. Otherwise, type any other character. ")
+			user = input("Type 'e' again to confirm. Otherwise, type any other character. ")
 		else:
 			print("I don't recognize the command " + user + ".")
 	print("")
